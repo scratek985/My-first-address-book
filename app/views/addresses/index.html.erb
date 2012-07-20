@@ -1,0 +1,42 @@
+<title>Contacts</title>
+<div id="head">
+<h1>Your Contacts</h1>
+</div>
+<body>
+<div>
+<table border=1>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Address</th>
+    <th>Number</th>
+    <th>See</th>
+    <th>Change</th>
+    <th>Erase</th>
+  </tr>
+
+  	
+<% @addresses.each do |address| %>
+  <tr>
+    <td><%= address.name %> <%= address.last_name %></td>
+    <td><%= address.emailadd %></td>
+    <td><%= address.address %></td>
+    <td><%= address.number %></td>
+    <td><%= link_to 'Show', address %></td>
+    <td><%= link_to 'Edit', edit_address_path(address) %></td>
+    <td><%= link_to 'Destroy', address, method: :delete, data: { confirm: 'THIS WILL DESTROY IT FOREVER!' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+
+	<%= link_to 'New Contact',  new_group_address_path( @group, @address ) %> <br/>
+	<%= link_to('Logout', destroy_user_session_path, {:method => :delete}, :class => "LogoutLinks") %> |
+	<%= link_to('Home', front_page_path) %> |
+	<%= link_to 'Help', tips_help_path %> <br/>
+
+
+</div>
+</body>

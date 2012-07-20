@@ -1,0 +1,13 @@
+<head>
+<title>Email</title>
+</head>
+<%= form_tag(@mail) do |f| %> 
+
+  <div class="field">
+    <%= f.label :mail_place %><br />
+    <%= f.text_field :mail_place %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

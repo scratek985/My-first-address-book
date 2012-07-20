@@ -1,0 +1,32 @@
+<title>Sign up</title>
+<h2>Sign up</h2>
+<div class=leftSide>
+	<br/>
+	</div>
+	<div class=rightSide>
+	<br/>
+	</div>
+	<div id="head">
+  <h1>Welcome to my Address Book!</h1>
+  </div>
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email %></div>
+ 
+<p><%= f.label :username %><br />
+  <%= f.text_field :username %></p>
+
+  
+  <div><%= f.label :password %><br />
+  <%= f.password_field :password %></div>
+
+  <div><%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation %></div>
+
+  <div><%= f.submit "Sign up" %></div>
+
+<% end %>
+
+<%= render "devise/shared/links" %>

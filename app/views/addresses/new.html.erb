@@ -1,0 +1,12 @@
+<div id="head">
+<h1>New Contact</h1>
+</div>
+<body>
+
+<%= render 'form' %>
+
+
+<%= link_to 'Help', tips_help_path %> <br/>
+	<%= link_to('Logout', destroy_user_session_path, {:method => :delete}, :class => "LogoutLinks") %> |
+<%= link_to('Home', front_page_path) %>
+</body>

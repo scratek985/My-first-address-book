@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+       <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+<div class=leftSide>
+<br/>
+</div>
+<div class=rightSide>
+<br/>
+<div class="logoutLinks">
+	<%= link_to('Logout', destroy_user_session_path, {:method => :delete}, :class => "LogoutLinks") %>
+	</div>
+</div>
+
+<%= yield %>
+
+</body>
+</html>

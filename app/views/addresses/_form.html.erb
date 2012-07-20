@@ -1,0 +1,40 @@
+<head>
+<title>New Contact</title>
+</head>
+<%= form_for([@address, @group], :html => {:multipart => true})do |f| %>
+  <% if @address.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@address.errors.count, "error") %> prohibited this address from being saved:</h2>
+
+      <ul>
+      <% @address.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "First" %>:
+    <%= f.text_field :name %>
+    	<span style="padding-left:15px">
+    <%= f.label "Last" %>: 
+      </span>
+    <%= f.text_field :last_name %>
+    <span style="padding-left:15px">
+    <%= f.label :address %>: 
+      </span>
+    <%= f.text_field :address %>
+    <span style="padding-left:15px">
+        <%= f.label "email" %>: 
+      </span>
+    <%= f.text_field :emailadd %>
+  <span style="padding-left:15px">
+    <%= f.label "Phone" %>:
+     </span>
+    <%= f.text_field :number %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

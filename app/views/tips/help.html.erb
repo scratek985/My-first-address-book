@@ -1,0 +1,27 @@
+<head>
+<title> Tips </title>
+<div id="head">
+<h1 style="text-align: center">Rules and Tips</h1>
+</div>
+<body style="text-align: left;padding-left: 18%;">
+	<ul>
+		<li>Rules</li>
+			<ol>
+			<li>Name has to be fill in</li>
+			<dd>You can leave anything else blank</dd>
+			<li>Password is case-sensitive.</li>
+			<li>You must enter email and username everytime  you login.</li>
+			</ol>
+		<li>Tips</li>
+			<ol>
+			<li>You can format a number like (888) 888-8888</li>
+			<li>Sometimes the homepage gives you an error. Refresh your screen and it should go away.</li>
+			<dd>If it doesn't send an email to fix@add.com</dd>
+			<li>To cancel your account go to Edit User Infromation. There is a link in the home screen.</li>
+	</ul>
+	<a href="http://localhost:3000">Front Page</a> |
+	<%= link_to 'Add a Contact', new_address_path %> <br/>
+	<%= link_to('Logout', destroy_user_session_path, {:method => :delete}, :class => "LogoutLinks") %>
+	
+
+</body>

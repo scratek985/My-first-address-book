@@ -1,0 +1,17 @@
+<head>
+<title>Welcome All!</title>
+</head>
+
+<body>
+  <div id="head">
+  <h1>Welcome </h1>
+  </div>
+<% if user_signed_in? %>
+	<h3> 
+	<%= link_to 'New Group', new_group_path %>
+	<%= link_to('Logout', destroy_user_session_path, :method => :delete) %> |
+ 	<%= link_to('Edit Account Information', edit_user_registration_path) %>
+	<% else %>
+	<%= link_to('Login', new_user_session_path) =%>
+	<% end%>
+	</h3>
