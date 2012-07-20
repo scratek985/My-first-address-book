@@ -1,7 +1,7 @@
 <head>
 <title>New Contact</title>
 </head>
-<%= form_for([@address, @group], :html => {:multipart => true})do |f| %>
+<%= form_for [@address.group, @address] do |f| %>
   <% if @address.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@address.errors.count, "error") %> prohibited this address from being saved:</h2>

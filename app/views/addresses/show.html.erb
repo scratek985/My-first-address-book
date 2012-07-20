@@ -18,15 +18,14 @@
   
   <b>Email:</b>
   <%= @address.emailadd %>
-	<%= render :partial => 'mails/form', :locals => { :emailadd => @mail } %>
 
   <b>Number:</b>
   <%= @address.number %>
 </p>
 
 
-<%= link_to 'Edit', edit_address_path(@address) %> |
-<%= link_to 'Back', addresses_path %> <br/>
+<%= link_to 'Edit', edit_group_address_path(@address) %> |
+<%= link_to 'Back', group_addresses_path(@address.group) %> <br/>
 	<%= link_to('Logout', destroy_user_session_path, {:method => :delete}, :class => "LogoutLinks") %> |
 	<%= link_to 'Help', tips_help_path %> <br/>
 

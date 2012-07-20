@@ -10,5 +10,5 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
 
   validates_confirmation_of :password, :username
-  has_many :addresses, :order => 'name ASC'
+  has_many :groups, :order => 'group_name ASC'
 end

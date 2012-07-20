@@ -3,7 +3,8 @@ class AddressesController < ApplicationController
   # GET /addresses.json
   
   def index
-    @addresses = current_user.addresses
+  	@group = Group.find(params[:group_id])
+    @addresses = @group.addresses
 
     respond_to do |format|
       format.html # index.html.erb
@@ -25,7 +26,9 @@ class AddressesController < ApplicationController
   # GET /addresses/new
   # GET /addresses/new.json
   def new
-    @address = Address.new
+	@address = Address.new
+  	@group = Group.find(params[:group_id])
+    @address.group = @group
 
     respond_to do |format|
       format.html # new.html.erb
@@ -42,12 +45,12 @@ class AddressesController < ApplicationController
   # POST /addresses.json
   def create
     @address = Address.new(params[:address])
-    @address.group = @group.id
-
+  	@group = Group.find(params[:group_id])
+    @address.group = @group
 
     respond_to do |format|
       if @address.save
-        format.html { redirect_to @address, notice: 'Address was successfully created.' }
+        format.html { redirect_to group_address_path(@address.group, @address), notice: 'Address was successfully created.' }
         format.json { render json: @address, status: :created, location: @address }
       else
         format.html { render action: "new" }
@@ -60,10 +63,12 @@ class AddressesController < ApplicationController
   # PUT /addresses/1.json
   def update
     @address = Address.find(params[:id])
+  	@group = Group.find(params[:group_id])
+    @address.group = @group
 
     respond_to do |format|
       if @address.update_attributes(params[:address])
-        format.html { redirect_to @address, notice: 'Address was successfully updated.' }
+        format.html { redirect_to group_address_path(@address), notice: 'Address was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -79,7 +84,7 @@ class AddressesController < ApplicationController
     @address.destroy
 
     respond_to do |format|
-      format.html { redirect_to addresses_url }
+      format.html { redirect_to group_addresses_path }
       format.json { head :no_content }
     end
   end

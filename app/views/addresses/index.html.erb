@@ -22,9 +22,9 @@
     <td><%= address.emailadd %></td>
     <td><%= address.address %></td>
     <td><%= address.number %></td>
-    <td><%= link_to 'Show', address %></td>
-    <td><%= link_to 'Edit', edit_address_path(address) %></td>
-    <td><%= link_to 'Destroy', address, method: :delete, data: { confirm: 'THIS WILL DESTROY IT FOREVER!' } %></td>
+    <td><%= link_to 'Show', group_address_path(address.group, address) %></td>
+	<td><%= link_to 'Edit', edit_group_address_path(address.group, address) %></td>
+    <td><%= link_to 'Destroy', group_address_path(address.group, address), method: :delete, data: { confirm: 'THIS WILL DESTROY IT FOREVER!' } %></td>
   </tr>
 <% end %>
 </table>

@@ -16,9 +16,7 @@ a.logoutLinks{
 <body>
 
 
-<%= link_to 'Show', @address %> |
-<%= link_to 'Back', group_addresses_path(@group, @address) %> |
-<%= link_to 'New', new_group_address_path(@group, @address) %> <br/>
+<%= link_to 'Back', group_addresses_path %> |
 <%= link_to('Logout', destroy_user_session_path, {:method => :delete}, :class => "LogoutLinks") %> |
 <%= link_to 'Help', tips_help_path %> <br/>
 
